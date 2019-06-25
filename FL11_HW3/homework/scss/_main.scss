@@ -1,0 +1,284 @@
+
+
+$fonts: (
+    SSP : ('Source Sans Pro', sans-serif),
+    HD : ('Hind', sans-serif),
+    FRS : ('Fresca', sans-serif)
+);
+@mixin underlineText {
+    content: "";
+    display: block;
+    background-color: $underlineColor;
+    position: absolute;
+}
+@mixin buttons  {
+    background-color: $buttonColor;
+    border: none;
+    height: 45px;
+    width: 125px;
+    color: white;
+    border-radius: 4px;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    &:hover {
+	cursor: pointer;}
+}      
+body {
+    align-items: center;
+	justify-content: center;
+	background-color: $mainBkGr;
+   }
+
+.header-wrap {
+    background: $headerBkGr ;
+    background-size: cover;
+    min-height: 100vh;
+    border-radius: 0 0 35% 0; 
+    padding-left: 120px; 
+    padding-top: 20px;
+    top:0;
+
+    }
+
+
+.header_heading {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color:$headercolor;
+    font-size: 50px;
+    width: 347px;
+    font-family: map-get($fonts, HD);
+    font-weight: bolder;
+    line-height: 1.2;
+    z-index: 10;
+    &::before {
+        @include underlineText;
+        z-index: -1; 
+        width: 210px;
+        bottom: 16px;
+        width: 216px;
+        height: 17px
+        
+    }
+    }
+
+.landing-logo {
+	display: flex;
+	img {
+	    margin-right: 29px;
+	    }
+	p {
+	    display: flex;
+	    flex-direction: column;
+	    margin: 0px;
+        justify-content: center;
+        align-items: center;
+        color: $headercolor;
+        line-height: 1;
+	    font-family: map-get($fonts, HD);
+        font-weight: 600;
+    	font-size: 22px;  
+    span {
+    	font-weight: 500;
+    	font-size: 12px;
+    	}
+	}
+}
+
+    
+.header_text{ 
+    white-space: pre-line;
+    width: 650px;
+    font-family: map-get($fonts, HD);
+    font-size: 16px;
+    color: $headercolor;
+}
+.header_button{
+    @include buttons;
+}
+.section_text {
+    color: $headercolor;
+    font-size: 28px;
+    font-family: map-get($fonts, SSP);
+    font-weight: bold;
+    text-align: center;
+	position: relative;
+	z-index: 1;
+	&:before {
+        @include underlineText;
+		width: 130px;
+        height: 10px;
+        bottom: 7px;
+        right: 532px;
+        z-index: -1;
+    }
+}
+.section {
+    position: relative;
+	align-items: center;
+	justify-content: center;    
+}
+
+
+.section_card_wrap {
+    
+    display:flex;
+    flex-direction: row;
+    border: none;
+    margin: 0px 100px 0px 100px;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.section_card_text{ 
+    font-family:map-get($fonts, SFF);
+    color:$sectionTextColor;
+    width: 350px;
+    font-size: 14px;
+    font-weight: 100;
+}
+  
+.section_card{
+    
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: $backtable;
+    border-radius: 5px;
+    margin: 4px;
+    img{
+        margin: 18px;
+        width: 330px;
+        height: 205px;
+        border-radius: 20px;
+           }
+}
+
+
+.section_card_heading {
+    text-align: center;
+	color: rgb(255, 255, 255);
+	font-family: map-get($fonts, SSP);
+	font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    &:after {
+        @include underlineText;
+		width: 100%;
+		height: 9px;
+		bottom: 0px;
+		z-index: -1
+    }
+}
+
+
+.section_card_text {
+    font-family: map-get($fonts, HD);
+    margin: 0px;
+    color: $sectionTextColor;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.5;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    }
+
+.section_banner {
+    position: relative;
+    display: flex;
+    width: 800px;
+    height: 120px;
+    background: $gradient;
+    align-items: center;
+    border-radius: 15px;
+    justify-content: center;
+    bottom: -61px;
+    left: 280px;
+
+}
+.section_banner_heading {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    position: relative;
+    font-family: map-get($fonts, SSP);
+    font-weight: 800;
+	color: $headercolor;
+	font-size: 24px;   
+    z-index: 1;    
+    &:after {
+        @include underlineText;
+        bottom: 5px;
+        z-index: -1;
+        left: 95px;
+		width: 51px;   	
+		height: 9px;		
+    }
+}
+.section_banner_text {
+    font-family: map-get($fonts, HD);
+	color: $sectionTextColor;	
+}
+
+.section_banner_button {
+    @extend .header_button;
+    position: relative;
+    left: 73px;
+    bottom: 17px;
+}
+
+
+
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: $footerBkGr;
+    height: 200px;
+    z-index: 1;
+    }
+    
+
+.footer-wrap {
+    width: 100%;
+    max-width: 1080px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 80px;}
+
+.footer_logo {
+    width: max-content;
+    height: max-content;
+    p {
+        color: $sectionTextColor;
+        font-family: map-get($fonts, HD);
+        span {
+            font-weight: bold;
+        }
+    }
+}
+.footer_text {
+    max-width: 300px;
+    font-size: 14px;
+	line-height: 1.4;
+	height: max-content;
+	font-family: map-get($fonts, HD);
+	color: $sectionTextColor;
+}
+.footer-cr {
+	height: max-content;
+	font-family: map-get($fonts, HD);
+	color: rgb(192, 195, 206);
+	font-size: 14px;
+}
