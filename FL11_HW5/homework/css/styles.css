@@ -1,0 +1,297 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: roboto;
+  background-color: #0b192f;
+  
+}
+.post-1 {
+	background: #B71757;
+}
+.post-2 {
+	background: #0D7E71;
+}
+.post-3 {
+	background: #b1660e;
+}
+.post-4 {
+	background: #d12767;
+}
+.post-5 {
+	background: #2d95bb;
+}
+.sandwich{
+  display: none;
+}
+a{
+  color: #fff;
+  text-decoration: none;
+}
+.header{
+  height: 81px;
+  background-color:  #162b4d;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+
+}
+
+.navbar__item:hover {
+  color: #fff;
+  background-color: #283d5f;
+}
+.header__navbar{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  
+}
+.navbar__item{
+  list-style: none;
+  font-size: 120%;
+  font-weight: 200;
+  padding: 28px;
+}
+
+.logo_header h1{
+  font-weight: 200;
+  color: #fff;
+  padding: 0 0 0 20%;
+}
+.logo_header span{
+  color: #d12767;
+  
+}
+.main{
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.content_box{
+  width: 75%;
+}
+.content_article {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.content_article:nth-child(even){
+  flex-direction: row-reverse;
+}
+
+.content_article:nth-child(even) .content_dis{
+  float: right;
+  width: 100%;
+  text-align: end;
+}
+.content_article img:hover,.content_dis:hover{
+  cursor: pointer;
+  filter: opacity(.5);
+}
+.content_article img{
+  width: 50%;
+  height: 100%;
+}
+
+.content_dis{
+  color: #fff;
+}
+.content_dis p{
+  color: rgba(255, 255, 255, 0.64);
+}
+.content_dis h2{
+  font-size: 3.7vw;
+  font-weight: 200;
+  margin: 0 0 0 0;
+  width: 100%;
+}
+
+.content_dis p{
+  font-size: 1.3vw;
+  font-weight: 100;
+  margin-top: 5%;
+  width: 100%;
+}
+
+.content_header{
+  margin: 3%;  
+}
+
+.content_date{
+  color:  rgba(255, 255, 255, 0.5);
+  font-size: 4vh;
+  font-weight: 100;
+  margin: 1%;
+}
+
+.content_day{
+  font-size: 8vh;
+  margin: 0;
+}
+
+.content_date p {
+  margin: 0;
+}
+
+.aside_content{
+  position: absolute;
+  display: flex;
+  width: 21%;
+  flex-direction: column;
+  top: 101px;
+  right: 5%;
+  
+}
+.aside_content_article img{
+  width: 100%;
+  height: 100%;
+}
+.aside_content_article{
+  margin: 0 0 4vh 0;
+  background-color: #fff;
+}
+.aside_content_text{
+  
+  width: 80%;
+  margin: 0 auto;
+}
+.aside_content_text h2{
+  font-weight: 400;
+  font-size: 2vw
+}
+.aside_content_text p{
+  font-weight: 200;
+  font-size: 1.25vw
+}
+.footer{
+  width: 90%;
+  background-color: #162b4d;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+  color: #b8b8b8;
+  font-weight: 200;
+}
+.footer p{
+  line-height: 160%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+
+@media only screen and (max-width: 746px) {
+  .content_box {
+    width: 62%;
+  }
+
+  .header__navbar{
+    display: none;
+  }
+  .sandwich{
+    display: block;
+  }
+  .logo_header h1{
+    padding: 0%;
+  }
+
+  .header{
+    flex-direction: column-reverse;
+    
+
+  }
+  .content_article img {
+    width: 100%;
+    height: 100%;
+    }
+  .content_article {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+  }
+  .content_dis{
+    margin :0;
+    float: none;
+    width: 100%;
+    text-align: center;
+
+    }
+  .content_dis h2 {
+    width: 100%;
+    text-align: left;
+    font-size: 6.5vw;
+    font-weight: 200;
+    margin: 5%;
+
+  }
+  .content_dis p { 
+    text-align: left;
+    font-size: 2.5vw;;
+    font-weight: 100;
+    margin: 5%;
+
+  }
+
+  .content_article:nth-child(even){
+    flex-direction: column;
+  }
+  .content_article:hover{
+    cursor: pointer;
+  }
+
+  .aside_content {
+    top: 122px; 
+    width: 32%;
+  }
+
+  .content_header {
+    margin: 3%;
+    text-align: center;
+  }
+
+  .content_date {
+    width: auto;
+    margin: 3%;
+       text-align: center;
+  }
+
+  .content_day {
+    font-size: 6vh;
+    
+  }
+
+
+  .footer p {
+    font-size: 2vw;
+    line-height: 5vh;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .main{
+    padding: 0;
+    padding-top: 20px;
+  }
+  .content_box {
+    width: 100%;}
+  .aside_content {
+    top: 0;
+    position: relative;
+    width: 100%;
+    right: 0%;
+
+  }
+  .footer p {
+    line-height: 3vh;
+  }
+  .logo_header h1 {
+    padding: 0;
+}
+}
