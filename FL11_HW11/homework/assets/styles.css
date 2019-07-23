@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.mainHeader {
+    margin: 20px;
+    text-align: center;
+    color: darkturquoise;
+    
+}
+
+.warningHeader{
+    text-align: center;
+    color: red;
+
+}
+.inputField{
+    width: 91%;
+    height: 60px;
+    border: 2px solid rgb(179, 179, 179);
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 20px;
+    padding: 20px;
+
+}
+
+.icons_size{
+    font-size: 40px;
+}
+
+.addBtn {
+    background: none;
+    border: none;
+}
+
+.addBtn:hover{
+    cursor: pointer;
+    }
+.doneButton {
+    margin: 5px;
+    color: darkturquoise; 
+    background: none;
+    border: none;
+
+}
+.doneButton:hover{
+    cursor: pointer;
+    }
+    
+.hidden {
+    display: none;
+}
+
+
+.editButton {
+    margin: 5px;
+    color: darkturquoise; 
+    background: none;
+    border: none;
+  
+}
+
+.editButton:hover{
+    cursor: pointer;
+    }
+    
+
+.deleteButton {
+    margin: 5px;
+    color: darkturquoise; 
+    float: right;
+    background: none;
+    border: none;
+
+}
+.saveButton{
+    margin: 5px;
+    color: darkturquoise; 
+    background: none;
+    border: none;
+
+}
+
+.deleteButton:hover{
+cursor: pointer;
+}
+
+
+.itemList{
+    color: darkturquoise; 
+    list-style: none;
+}
+.editInput{
+    width: 50%;
+    height: 30px;
+    border: 2px solid rgb(179, 179, 179);
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#list{
+   
+    position: absolute;
+    width: 100%;
+}
+
+.liSpan{
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.icons_sizeform {
+    font-size: 70px;
+}
+
+.form {
+    display: flex;
+}
+.over{
+    border: 2px dashed #000;
+}
