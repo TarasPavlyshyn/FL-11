@@ -110,7 +110,7 @@ buttonadd[0].addEventListener('click', function(){
             e.preventDefault();
         }
         e.dataTransfer.dropEffect = 'move'; 
-        return false;
+    return false;
     }
 
     function handleDragEnter() {
@@ -127,9 +127,7 @@ buttonadd[0].addEventListener('click', function(){
         if (e.stopPropagation) {
             e.stopPropagation(); 
         }
-        
         if (dragSrcEl !== this) {
-            
             dragSrcEl.innerHTML = this.innerHTML;
             this.innerHTML = e.dataTransfer.getData('text/html');
             this.classList.remove('over');
@@ -191,7 +189,3 @@ buttonadd[0].addEventListener('click', function(){
         })
     }
 })
-    
-
-
-
