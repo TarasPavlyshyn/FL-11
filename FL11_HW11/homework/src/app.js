@@ -76,8 +76,8 @@ buttonadd[0].addEventListener('click', function(){
     
     /* div visible*/
     let divItem = document.createElement('div');
+    divItem.classList.add('divItem');
     divItem.draggable = true;
-    liItem.classList.add('dragClass');
     divItem.appendChild(doneButton);
     divItem.appendChild(itemSpan);
     divItem.appendChild(editButton);
@@ -87,7 +87,7 @@ buttonadd[0].addEventListener('click', function(){
     let hiddendiv = document.createElement('div');
     hiddendiv.appendChild(editLiItem);
     hiddendiv.appendChild(saveButton);
-    hiddendiv.classList.add('hidden');
+    hiddendiv.classList.add('hidden', 'editclass');
     
     
 
@@ -98,35 +98,6 @@ buttonadd[0].addEventListener('click', function(){
     input[0].value ='';
     enableButton(input[0]);
     
-    deleteButton.addEventListener('click',function(){
-        todolist.removeChild(liItem);
-        buttonadd[0].disabled = false;
-        wapningP[0].classList.add('hidden');
-        input[0].disabled = false;
-    })
-    
-    editButton.addEventListener('click', function(){ 
-        hiddendiv.classList.remove('hidden');
-        editLiItem.value = itemSpan.innerText;
-        divItem.classList.add('hidden');
-        
-        
-        
-    })
-    saveButton.addEventListener('click', function(){
-        itemSpan.innerText = editLiItem.value;
-        divItem.classList.remove('hidden');
-        hiddendiv.classList.add('hidden');
-        
-    })
-
-    doneButton.addEventListener('click', function(){
-        insertDonebutton.innerText = 'done';
-        doneButton.disabled = true;
-        editButton.classList.add('hidden');
-    })
-    
-   
     function handleDragStart(e) { 
         this.style.opacity = '0.8';
         dragSrcEl = this;
@@ -156,13 +127,14 @@ buttonadd[0].addEventListener('click', function(){
         if (e.stopPropagation) {
             e.stopPropagation(); 
         }
-       
+        
         if (dragSrcEl !== this) {
+            
             dragSrcEl.innerHTML = this.innerHTML;
             this.innerHTML = e.dataTransfer.getData('text/html');
             this.classList.remove('over');
-            console.log('one',this.innerHTML);
-            console.log('two',dragSrcEl.innerHTML);
+            bindEvents(this);
+            bindEvents(dragSrcEl);
         }
     return false;
     }
@@ -170,12 +142,54 @@ buttonadd[0].addEventListener('click', function(){
     function handleDragEnd() {
         this.classList.remove('over');
     }
-        liItem.addEventListener('dragstart', handleDragStart, false);
-        liItem.addEventListener('dragenter', handleDragEnter, false)
-        liItem.addEventListener('dragover', handleDragOver, false);
-        liItem.addEventListener('dragleave', handleDragLeave, false);
-        liItem.addEventListener('drop', handleDrop, false);
-        liItem.addEventListener('dragend', handleDragEnd, false);
+    bindEvents(liItem);
+    
+    liItem.addEventListener('dragstart', handleDragStart, false);
+    liItem.addEventListener('dragenter', handleDragEnter, false)
+    liItem.addEventListener('dragover', handleDragOver, false);
+    liItem.addEventListener('dragleave', handleDragLeave, false);
+    liItem.addEventListener('drop', handleDrop, false);
+    liItem.addEventListener('dragend', handleDragEnd, false);
+    
+    function bindEvents(e){
+        const del = e.getElementsByClassName('deleteButton');
+        const edit = e.getElementsByClassName('editButton');
+        const editLiItem = e.getElementsByClassName('editInput');
+        const itemSpan = e.getElementsByClassName('liSpan');
+        const hiddendiv = e.getElementsByClassName('editclass');
+        const divItem = e.getElementsByClassName('divItem');
+        const done = e.getElementsByClassName('doneButton');
+        const insertDonebutton = e.getElementsByClassName('icons_size');
+        const save = e.getElementsByClassName('saveButton');
+
+        del[0].addEventListener('click',function(){
+            todolist.removeChild(e);
+            buttonadd[0].disabled = false;
+            wapningP[0].classList.add('hidden');
+            input[0].disabled = false;
+        })
+
+
+        edit[0].addEventListener('click', function(){ 
+            hiddendiv[0].classList.remove('hidden');
+            editLiItem[0].value = itemSpan[0].innerText;
+            divItem[0].classList.add('hidden');
+            
+        })
+        
+        save[0].addEventListener('click', function(){
+            itemSpan[0].innerText = editLiItem[0].value;
+            divItem[0].classList.remove('hidden');
+            hiddendiv[0].classList.add('hidden');
+            
+        })
+
+        done[0].addEventListener('click', function(){
+            insertDonebutton[0].innerText = 'done';
+            done[0].disabled = true;
+            edit[0].classList.add('hidden');
+        })
+    }
 })
     
 
